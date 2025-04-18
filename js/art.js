@@ -1,14 +1,17 @@
 // Open the Modal
 var slideshowing = false;
-function openModal() {
-  document.getElementById('myModal').style.display = "block";
+function openModal(idName) {
+  document.getElementById(idName).style.display = "block";
   slideshowing = true;
+  activeModalId = idName;
 }
 
 // Close the Modal
-function closeModal() {
-  document.getElementById('myModal').style.display = "none";
+function closeModal(idName) {
+  document.getElementById(idName).style.display = "none";
   slideshowing = false;
+  activeComic = "";
+  activeModalId = "";
 }
 
 
@@ -23,39 +26,77 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+  console.log(showSlides);
   var i;
   var slides = document.getElementsByClassName("mySlides"); //array of mySlides
-  //var dots = document.getElementsByClassName("demo");
- // var captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
- /* for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }*/
   slides[slideIndex-1].style.display = "block";
-  //dots[slideIndex-1].className += " active";
-  //captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
+// now for comics
+function plusComicSlides(name, n) {
+  var index = comicIndices.get(name) + n;
+  comicIndices.set(name, index);
+  showComicSlides(name, comicIndices.get(name));
+}
 
-//$( document ).ready(function() {
+function currentComicSlide(name, n) {
+  comicIndices.set(name, n);
+  showComicSlides(name, comicIndices.get(name));
+}
+
+function showComicSlides(name, n) {
+  activeComic = name;
+  var i;
+  var slides = document.getElementsByClassName(name);
+  if (n > slides.length) {
+    comicIndices.set(name, 1);
+  }
+  if (n < 1) {
+    comicIndices.set(name, slides.length);
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[comicIndices.get(name)-1].style.display = "block";
+}
+
 var slideIndex = 1;
-  //showSlides(slideIndex);
-//});
+var comicIndices = new Map();
+comicIndices.set("comic0", 1);
+comicIndices.set("comic1", 1);
+comicIndices.set("comic2", 1);
+comicIndices.set("comic3", 1);
+comicIndices.set("comic4", 1);
+var activeComic = "";
+var activeModalId = "";
 
 $(document).keydown(function(keyPressed) {
+
+  // need to change this to deal with which function to use, when we have an active slide
   if(slideshowing){
     if(keyPressed.keyCode == 37){ //left arrow
-      plusSlides(-1);
+      if (activeComic === ""){
+        plusSlides(-1);
+      }
+      else {
+        plusComicSlides(activeComic, -1);
+      }
     }
     if(keyPressed.keyCode == 39){ //right arrow
-      plusSlides(1);
+      if (activeComic === ""){
+        plusSlides(1);
+      }
+      else {
+        plusComicSlides(activeComic, 1);
+      }
     }
     if(keyPressed.keyCode == 27){ //escape key
-      closeModal();
+      closeModal(activeModalId);
     }
   }
 });
