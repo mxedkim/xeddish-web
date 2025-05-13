@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>XED K.</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="xed 2025">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+   <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+</head>
+<body>
+
+<header class="main_nav">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns logo">
+				<a href="index.html">XED</a>
+			</div>
+		</div>
+		<div class="row">
+			<div id="navcontainer">
+				<ul>
+					<li><a href="about.html">ABOUT</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+</header>
+
+<div class="container main">
+	<div class="row">
+			<div class="blocktext">
+				<img class="projectpage" src="img/gamedev/hugthemrealgood/screenshot1.gif"/>
+				<p>
+				<p><a href="https://mxedk.itch.io/hug-them-real-good">[PLAY ONLINE HERE]</a>
+				<br><a href="https://www.youtube.com/watch?v=7GS2OAcQW-Y">[or watch a playthrough here]</a>
+				<br>&#60;Role: game designer, level designer, programmer, 3D artist, animator, sound designer&#62;</p>
+				<p><i>HUG THEM REAL GOOD</i> is a cute hugging simulator.</p>
+				<p>You end up on a playground with only your spherical self and two arms. Arms that your potential friends don't have. Befriend up to four cool kids by hugging them! And roll around, that's also fun.
+				</p>
+				<p>Made with Unity during Train Jam 2018 with <a href="https://skippyskippy.itch.io/">Timothy Sun</a>.</p>
+
+				<p>You can play with WASD/arrow keys and either scrollwheel/trackpad or bend sensor set up with Arduino that feeds pressure values to the Unity game. Here it is in action:</p>
+				<img class="projectpage" src="img/gamedev/hugthemrealgood/screenshot5.gif"/>
+				<p>
+				<p>We started with "let's make something cute," even before we received the prompt, "Odyssey."
+          We also wanted to use the bend sensor Tim had brought onto the train, so naturally cute plus bend sensor meant a hugging mechanic.
+          From there, ideas kept flowing: play as a rolling ball to go around hugging kids (with one eye, loosely inspired by cyclops from Homer's Odyssey) in a playground.</p>
+				<p>Because there was no conventional source control we could use, we passed Unity packages back and forth after dividing up tasks evenly.
+          Initially, I handled all the art, level design, and scene setup, such as the swing and seesaw physics, while Tim handled the code.
+          As we neared the completion of the game, we mixed up the tasks as most game jams go.
+          For example, Tim made the emotion indicators during the hugging sequence and I scripted cutscenes, animations, and sounds.
+          Overall, it was a smooth, easygoing process where we balanced out the tasks pretty well from the get-go and managed to sustain it.</p>
+				<p>One of the challenges was designing the hugger.
+          After experimenting with the arms, I rigged the arms and set different angles that each joint would rotate by script at every stage of the hug for that adjustable hug mechanic.
+          Another challenge was settling on an art style; from the beginning, I chose an unlit shader for that simple 2D look, but the lack of visible depth hurt the usability.
+          Instead of fighting with the lighting and shaders, due to time pressure, I decided to go with 100% unlit shader material to fake the shadows for depth.</p>
+				<p>Color choice was also something I had to think about for the level design; I knew I had to work with a limited palette, otherwise it would lose readability to the player.
+          So, I chose three main colors for each playground structure, the main red becoming equivalent to a ramp, while maintaining the unique colors of the kid characters.
+          For the layout, I wanted the player to feel like they could freely explore the space, yet have a circular path around the arena for a sense of progression, with the center being always accessible so if they happened to chance upon the "final goal" early on, they knew to come back to it at the end.</p>
+				<img class="projectpage" src="img/gamedev/hugthemrealgood/screenshot2.gif"/>
+				<img class="projectpage" src="img/gamedev/hugthemrealgood/screenshot3.gif"/>
+				<img class="projectpage" src="img/gamedev/hugthemrealgood/screenshot4.gif"/>
+				<p>
+			</div>
+	</div>
+	<div class="blocktextcentered"><p><a href="gamedev.html">« Return to project list</a></p></div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row twleve columns"></div>
+		<div class="row twelve columns">
+			<p>&copy; xed k. 2025</p>
+		</div>
+
+</footer>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

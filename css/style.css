@@ -16,12 +16,16 @@ body{
 }
 .row{
 	padding: 0.5% 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Typography */
 body{
 	font-family: 'Slabo 27px';
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 p a{
